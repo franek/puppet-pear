@@ -64,3 +64,17 @@ pear::package { "drush":
 }
 ```
 
+## Set the proxy
+
+It is now possible to set a proxy to pear : 
+
+```puppet
+pear::proxy{ "pear-proxy" :
+  proxyEnable => "true", 
+  proxyHost => "proxy.domain.com",
+  proxyPort => "8080",
+  require => Class["pear"];
+}
+```
+
+By default, the proxy is not set.
